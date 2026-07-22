@@ -33,9 +33,7 @@ public class StockServiceImpl implements StockService {
     @Override
     public Stock addStock(Stock stock) {
         stockRepository.findBySymbol(stock.symbol()).ifPresent(s -> {
-            // 临时破坏重复校验逻辑，制造bug
-            throw new IllegalArgumentException("Always broken: " + stock.symbol());
-        });
+            throw new IllegalArgumentException("Always broken: " + stock.symbol());        });
         return stockRepository.save(stock);
     }
 
