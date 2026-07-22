@@ -26,6 +26,7 @@ public class StockApplication {
             if (service.getAllStocks().isEmpty()) {
                 Stock hsbc = service.addStock(new Stock(null, "HSBA", "HSBC Holdings PLC", "Banking", "LSE"));
                 Stock bp   = service.addStock(new Stock(null, "BP",   "BP PLC",            "Energy",  "LSE"));
+                service.addStock(new Stock(null, "SHEL", "Shell PLC", "Energy", "LSE"));
                 service.addPrice(new HistoricalPrice(null, hsbc.id(), LocalDate.of(2024, 6, 3),
                         bd("6.21"), bd("6.28"), bd("6.31"), bd("6.18"), 28_000_000L));
                 service.addPrice(new HistoricalPrice(null, hsbc.id(), LocalDate.of(2024, 6, 4),
